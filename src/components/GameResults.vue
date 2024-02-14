@@ -3,7 +3,7 @@
         <div class="game__result-item">
             <h1 class="game__result-title">Вы выбрали</h1>
             <div class="game__result-image" :class="`game__result-image--${userChoice}`">
-                <img :src="`src/assets/${userChoice}.svg`" :alt="`Вы выбрали ${userChoice}`" />
+                <img :src="userChoiceImage" :alt="`Вы выбрали ${userChoice}`" />
             </div>
         </div>
         <div class="game__result-item">
@@ -17,13 +17,15 @@
         <div class="game__result-item">
             <h1 class="game__result-title">Компьютер выбрал</h1>
             <div class="game__result-image" :class="`game__result-image--${computerChoice}`">
-                <img :src="`src/assets/${computerChoice}.svg`" :alt="`Компьютер выбрал ${computerChoice}`" />
+                <img :src="computerChoiceImage" :alt="`Компьютер выбрал ${computerChoice}`" />
             </div>
         </div>
     </div>
 </template>
 
 <script setup>
+import { computed } from 'vue';
+
 const props = defineProps({
     userChoice: String,
     computerChoice: String,
@@ -31,6 +33,23 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['reset']);
+
+import scissorsImage from '@/assets/scissors.svg';
+import paperImage from '@/assets/paper.svg';
+import rockImage from '@/assets/rock.svg';
+import lizardImage from '@/assets/lizard.svg';
+import spockImage from '@/assets/spock.svg';
+
+const imageUrls = {
+    scissors: scissorsImage,
+    paper: paperImage,
+    rock: rockImage,
+    lizard: lizardImage,
+    spock: spockImage
+};
+
+const userChoiceImage = computed(() => imageUrls[props.userChoice]);
+const computerChoiceImage = computed(() => imageUrls[props.computerChoice]);
 </script>
 
 <style scoped>
@@ -53,28 +72,6 @@ const emit = defineEmits(['reset']);
     align-items: center;
 }
 
-.game__result-image {
-    height: 200px;
-    width: 200px; 
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    color: #000;
-}
-
-.game__result-image--rock {
-  border: 20px solid coral;
-}
-
-.game__result-image--paper {
-    border: 20px solid blue;
-}
-
-.game__result-image--scissors {
-    border: 20px solid gold;
-}
 .game__result-text {
     margin: 10px 0;
 }
@@ -84,10 +81,11 @@ const emit = defineEmits(['reset']);
     color: blue;
 }
 
-@media (max-width: 600px) {
-    
+@media (max-width: 400px) {
+
     .game__results {
         flex-direction: column;
+        margin-bottom: 20px;
     }
 
     .game__result-image {

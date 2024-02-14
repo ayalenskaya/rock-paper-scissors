@@ -23,48 +23,19 @@ const emit = defineEmits(['play']);
     background-image: url('@/assets/bg-triangle.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain; 
+    background-size: contain;
 }
 
-.game__choice-button {
-    margin: 0 10px; 
-    border: 20px solid;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-}
+@media (max-width: 400px) {
 
-.game__choice-button--rock {
-    border: 20px solid coral; 
-}
-
-.game__choice-button--paper { 
-    border: 20px solid blue;
-    position: relative;
-    top: -50px;
-    left: -50px;
-}
-
-.game__choice-button--scissors {
-    border: 20px solid gold;
-    position: relative;
-    top: -50px;
-    left: 50px;
-}
-
-@media (max-width: 600px) {
-
-    .game__choices { 
+    .game__choices {
         width: 100%;
+        margin-bottom: 50px;
     }
 
     .game__choice-button {
         width: 100px;
         height: 100px;
     }
-
-    .game__choice-button--rock, .game__choice-button--paper, .game__choice-button--scissors {
-    border-width: 10px; 
-}
 }
 </style>

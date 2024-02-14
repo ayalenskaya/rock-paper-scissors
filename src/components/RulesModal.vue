@@ -16,17 +16,8 @@
             <li> Ящерица побеждает Спока</li>
             <li> Спок побеждает Ножницы</li>
             <li> Ножницы побеждают Ящерицу</li>
-            
-            
 
-
-
-
-
-
-
-
- </p>
+            </p>
             <button class="modal__close" @click="closeModal">Закрыть</button>
         </div>
     </div>
@@ -57,6 +48,7 @@ const closeModal = () => {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 100;
 }
 
 .modal__content {

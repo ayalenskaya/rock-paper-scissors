@@ -41,7 +41,7 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em; 
+  padding: 0.6em 1.2em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
@@ -67,6 +67,80 @@ button:focus-visible {
   padding: 2rem;
   text-align: center;
   width: 100%;
+}
+
+.game__result-image {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  position: relative;
+}
+
+.game__result-image--rock,
+.game__choice-button--rock {
+  border: 20px solid coral;
+}
+
+.game__result-image--paper,
+.game__choice-button--paper {
+  border: 20px solid blue;
+}
+
+.game__choice-button--paper {
+  position: relative;
+  top: -50px;
+  left: -50px;
+}
+
+.game__result-image--scissors,
+.game__choice-button--scissors {
+  border: 20px solid gold;
+}
+
+.game__choice-button--scissors {
+  top: -50px;
+  left: 50px;
+}
+
+.game__result-image--lizard,
+.game__choice-button--lizard {
+  border: 20px solid rgb(188, 59, 12);
+}
+
+.game__choice-button--lizard {
+  top: -50px;
+  left: 50px;
+}
+
+.game__result-image--spock,
+.game__choice-button--spock {
+  border: 20px solid rgb(255, 0, 21);
+}
+
+.game__choice-button--spock {
+  top: -50px;
+  left: 50px;
+}
+
+.game__choice-button {
+  margin: 0 10px;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+
+.game__choice-button--rock,
+.game__choice-button--paper,
+.game__choice-button--scissors,
+.game__choice-button--lizard,
+.game__choice-button--spock {
+  border-width: 10px;
 }
 
 @media (prefers-color-scheme: light) {

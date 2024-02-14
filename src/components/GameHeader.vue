@@ -1,19 +1,23 @@
 <template>
     <div class="game__header">
         <div class="game__header-text">
-            <h1 class="game__header-title">rock</h1>
-            <h1 class="game__header-title">paper</h1>
-            <h1 class="game__header-title">scissors</h1>
+            <img :src="logoSrc" alt="Logo" class="game__logo">
         </div>
         <p class="game__score">Счет: <br> {{ score }}</p>
     </div>
 </template>
 
-<script setup> 
+<script setup>
+import { computed } from 'vue';
+import logoImage from '@/assets/logo.svg';
+import bonusLogoImage from '@/assets/logo-bonus.svg';
 
 const props = defineProps({
+    isBonus: Boolean,
     score: Number
 });
+
+const logoSrc = computed(() => props.isBonus ? bonusLogoImage : logoImage);
 </script>
 
 <style scoped>
@@ -25,7 +29,7 @@ const props = defineProps({
     border: 1px solid;
     border-radius: 20px;
     margin-bottom: 100px;
-    width: 500px;
+    min-width: 500px;
 }
 
 .game__header-text {
@@ -47,11 +51,11 @@ const props = defineProps({
     border-radius: 20px;
 }
 
-@media (max-width: 600px) {
-  
+@media (max-width: 400px) {
+
     .game__header {
         flex-direction: column;
-        width: 100%;
+        min-width: 260px; 
     }
 
     .game__header-text {
