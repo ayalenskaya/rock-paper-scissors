@@ -24,7 +24,7 @@
                 <h1 class="game__result-title">Вы выбрали</h1>
                 <div class="game__result-image"
                 :class="`game__result-image--${userChoice}`">
-                    <img :src="`@/assets/${userChoice}.svg`" :alt="`Вы выбрали ${userChoice}`" />
+                    <img :src="`src/assets/${userChoice}.svg`" :alt="`Вы выбрали ${userChoice}`" />
                 </div>
             </div>
             <div class="game__result-item">
@@ -39,7 +39,7 @@
                 <h1 class="game__result-title">Компьютер выбрал</h1>
                 <div class="game__result-image"
                 :class="`game__result-image--${computerChoice}`">
-                    <img :src="`@/assets/${computerChoice}.svg`" :alt="`Компьютер выбрал ${computerChoice}`" />
+                    <img :src="`src/assets/${computerChoice}.svg`" :alt="`Компьютер выбрал ${computerChoice}`" />
                 </div>
             </div>
         </div>
