@@ -81,6 +81,7 @@ const emit = defineEmits(['reset']);
 
 .game__play-again-button {
     margin-top: 10px;
+    color: blue;
 }
 
 @media (max-width: 600px) {

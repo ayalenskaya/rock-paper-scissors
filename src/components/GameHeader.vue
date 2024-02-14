@@ -25,6 +25,7 @@ const props = defineProps({
     border: 1px solid;
     border-radius: 20px;
     margin-bottom: 100px;
+    width: 500px;
 }
 
 .game__header-text {
@@ -50,6 +51,7 @@ const props = defineProps({
   
     .game__header {
         flex-direction: column;
+        width: 100%;
     }
 
     .game__header-text {
