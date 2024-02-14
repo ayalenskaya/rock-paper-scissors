@@ -9,15 +9,17 @@
             <p class="game__score">Счет: <br> {{ score }}</p>
         </div>
         <div v-if="!userChoice && !computerChoice" class="game__choices">
-            <button class="game__choice-button game__choice-button--rock" @click="play('rock')">
-                <img class="game__choice-image" src="@/assets/rock.svg" alt="Камень" />
-            </button>
             <button class="game__choice-button game__choice-button--paper" @click="play('paper')">
                 <img class="game__choice-image" src="@/assets/paper.svg" alt="Бумага" />
             </button>
             <button class="game__choice-button game__choice-button--scissors" @click="play('scissors')">
                 <img class="game__choice-image" src="@/assets/scissors.svg" alt="Ножницы" />
             </button>
+            <button class="game__choice-button game__choice-button--rock" @click="play('rock')">
+                <img class="game__choice-image" src="@/assets/rock.svg" alt="Камень" />
+            </button>
+            
+          
         </div>
         <div class="game__results" v-if="userChoice && computerChoice">
             <div class="game__result-item">
@@ -150,25 +152,23 @@ onBeforeUnmount(() => {
 }
 
 .game__choice-button--rock {
-    border: 20px solid coral;
-    position: relative;
-    left: -50px;
-    top: -50px;
+    border: 20px solid coral; 
 }
 
 .game__choice-button--paper { 
     border: 20px solid blue;
     position: relative;
     top: -50px;
-    left: 50px;
+    left: -50px;
 }
 
 .game__choice-button--scissors {
     border: 20px solid gold;
+    position: relative;
+    top: -50px;
+    left: 50px;
 }
-
-.game__choice-image { 
-}
+ 
 
 .game__results {
     display: flex;
@@ -228,6 +228,10 @@ onBeforeUnmount(() => {
         flex-direction: column;
     }
 
+    .game__header-text {
+        margin-bottom: 20px;
+    }
+
     .game__choices { 
         width: 100%;
     }
@@ -236,6 +240,11 @@ onBeforeUnmount(() => {
         width: 100px;
         height: 100px;
     }
+
+    .game__choice-button--rock, .game__choice-button--paper, .game__choice-button--scissors {
+    border-width: 10px; 
+}
+ 
 
     .game__results {
         flex-direction: column;
